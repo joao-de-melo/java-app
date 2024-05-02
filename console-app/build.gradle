@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+    id "application"
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation("org.apache.commons:commons-csv:1.10.0")
+    implementation("org.apache.httpcomponents.client5:httpclient5:5.3.1")
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.17.0")
+    implementation("io.reactivex.rxjava3:rxjava:3.1.8")
+
+    implementation("org.slf4j:slf4j-api:2.0.13")
+    implementation("org.apache.logging.log4j:log4j-core:2.23.1")
+    implementation("org.apache.logging.log4j:log4j-api:2.23.1")
+    implementation("org.apache.logging.log4j:log4j-slf4j2-impl:2.23.1")
+
+
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'com.github.tomakehurst:wiremock:3.0.1'
+    testImplementation 'org.skyscreamer:jsonassert:1.5.1'
+    testImplementation 'org.mockito:mockito-core:5.11.0'
+    testImplementation("org.hamcrest:hamcrest:2.2")
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application {
+    mainClassName = "com.esg.console.Main"
+}

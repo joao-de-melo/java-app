@@ -1,0 +1,6 @@
+rootProject.name = 'java-app'
+
+include 'rest-server'
+include 'console-app'
+include 'end-to-end-test'
+
